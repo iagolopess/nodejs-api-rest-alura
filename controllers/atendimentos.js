@@ -1,5 +1,5 @@
 // Controla as rotas
-
+const Atendimento = require("../models/atendimentos");
 module.exports = (app) => {
   //req = o que enviamos
   //res = o que recebemos
@@ -8,7 +8,8 @@ module.exports = (app) => {
   ); // Puxa dados para o navegador
 
   app.post("/atendimentos", (req, res) => {
-    console.log(req.body);
-    res.send("Você está na rota de atendimentos e está realizando um POST");
+    const atendimento = req.body;
+
+    Atendimento.adiciona(atendimento, res);
   }); // recebe dados do navegador
 };

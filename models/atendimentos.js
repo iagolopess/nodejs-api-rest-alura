@@ -20,3 +20,5 @@ class Atendimento {
   }
 }
 module.exports = new Atendimento();
+
+console.log("teste");
